@@ -184,3 +184,6 @@ else  throw new RangeError(`Tem parada ai mermão`)
 
 //Questão 17
 
+let dist= 9.8
+let gas= 5.24
+
