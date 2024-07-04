@@ -6,14 +6,14 @@ console.log("Hello World")
 
 //Questão 2
 
-const itens=["maça","banana","jabuticaba","Berinjela","Pitomba"]
+const itens = ["maça", "banana", "jabuticaba", "Berinjela", "Pitomba"]
 
-for(let i=0; i< itens.length; i++){
+for (let i = 0; i < itens.length; i++) {
     console.log(itens[i]);
 }
 //Questão 3
-function calculararea(lado){
-    let area= lado*lado;
+function calculararea(lado) {
+    let area = lado * lado;
     console.log(`A area do quadrado de lado ${lado} é igual a ${area}`)
 }
 
@@ -107,83 +107,136 @@ if (numero === 5) {
 
 //Questão 12
 
-var aleatorios = [1,2,3,4,5,6,7,8,9,10]
-var pares=[]
+var aleatorios = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+var pares = []
 
-aleatorios.forEach(function(restos){
-if(restos %2=== 0)
-    pares.push(restos)
+aleatorios.forEach(function (restos) {
+    if (restos % 2 === 0)
+        pares.push(restos)
 })
 console.log(pares)
 
 //Questão 13
-var notas=[2.5,2.5,9.5]
-var media= 0;
+function calcMedia(n1, n2, n3) {
+    let media = (n1 + n2 + n3) / 3
+    return media
+}
 
-for(var i =0;i<notas.length;i++){
-    media+=notas[i];
+let minhaMedia = calcMedia(7, 8, 5)
+if (minhaMedia >= 7) {
+    console.log(`Média ${minhaMedia}, resultado:Aprovado`)
 }
-let final= media/3
+else if (minhaMedia >= 5) {
+    console.log(`Média ${minhaMedia}, resultado: Recuperação`)
+}
+else {
+    console.log(`Média${minhaMedia}, resultado:Reprovado`)
+}
 
-if (final>=7){
-    console.log("A media dele é:", final ," está reprovado")
-}
-if (final<7 && final>5){
-    console.log("A media dele é:", final," está de recuperação")
-}
-else{
-    console.log("Está reprovado, a media dele é", final)
-}
 
 //Questão 14
 
-let altura= Number(window.prompt("Digite sua altura:"))
+let altura = Number(window.prompt("Digite sua altura:"))
 
-let peso= Number(window.prompt("Digite seu peso"))
+let peso = Number(window.prompt("Digite seu peso"))
 
-let imc= peso/(altura**2)
+let imc = peso / (altura ** 2)
 
-if (imc <= 18.5){
-    console.log("Seu IMC é" ,imc.toFixed(0),"resultado: Abaixo do peso")
+if (imc <= 18.5) {
+    console.log("Seu IMC é", imc.toFixed(0), "resultado: Abaixo do peso")
 }
-else if (imc=> 18.5 && imc<=25){
+else if (imc => 18.5 && imc <= 25) {
     console.log("Seu IMC é", imc.toFixed(0), "resultado: Peso Ideal")
 }
 
-else if (imc > 25 && imc<=30){
-    console.log("Seu IMC é", imc.toFixed(0),"resultado: Sobrepeso")
+else if (imc > 25 && imc <= 30) {
+    console.log("Seu IMC é", imc.toFixed(0), "resultado: Sobrepeso")
 }
-else if (imc > 30 && imc <=40){
-    console.log("Seu IMC é", imc.toFixed(0),"resultado: Obesidade")
+else if (imc > 30 && imc <= 40) {
+    console.log("Seu IMC é", imc.toFixed(0), "resultado: Obesidade")
 }
-else if (imc > 40){
-    console.log("Seu IMC é", imc.toFixed(0),"resultado: Obesidade Morbida")
+else if (imc > 40) {
+    console.log("Seu IMC é", imc.toFixed(0), "resultado: Obesidade Morbida")
 }
 
 //Questão 15
 
 let tabuada = prompt("Digite o numero da tabuada")
 
-function tabua (tabuada){
-    for (let i= 1; i<=10; i++){
-        console.log(`${tabuada} x ${i} = ${tabuada*i}`)
+function tabua(tabuada) {
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${tabuada} x ${i} = ${tabuada * i}`)
     }
 }
 tabua(tabuada)
 
 //Questão 16
 
-let n2=0
-let n1=5
-let op=n1/n2
+let n2 = 2
+let n1 = 5
+let op = n1 / n2
 
-if (n2!=0){
+if (n2 != 0) {
     console.log(op)
 }
-else  throw new RangeError(`Tem parada ai mermão`)
+else throw new RangeError(`Tem parada ai mermão`)
 
 //Questão 17
 
-let dist= 9.8
-let gas= 5.24
+function calculagas(distancia) {
+    const autonomia = 9.8;
+    const preco = 5.24;
 
+    let valor = (((distancia * 2) / autonomia) * preco).toFixed(2)
+    console.log(`Para fazer ${distancia}KMs você deve abastecer ${valor}R$`)
+}
+
+calculagas(2900)
+
+//Q18
+
+function fatorial(num) {
+
+    try{
+    if (num < 0) {
+      throw Error(`Nao pode fatorial de numero negativo`)
+    }
+    else if (num == 0) {
+        return 1
+    }
+    else {
+        let fatorial= 1;
+        for (let i=2; i<= num; i++){
+            fatorial *=i;
+        }
+        return fatorial
+    }
+} catch (error){
+    console.log(error)
+}
+}
+
+console.log(`Fatorial de 5:`+ fatorial(5))
+
+//Q19
+const ArraQ =[12,36,52,77]
+const resQ =[]
+
+for(let elemento of ArraQ){
+    let final = elemento + 7
+    resQ.push(final)
+}
+
+console.log(resQ)
+
+
+//Q20
+
+let RG = true
+let CNH = true
+
+if(RG || CNH){
+    console.log("Faz a prova")
+} else{
+    console.log("Vai pra casa")
+}
