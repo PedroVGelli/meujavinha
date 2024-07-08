@@ -1,0 +1,17 @@
+.ajuste img{
+    width: 40px; height: 40px;
+    margin-top: 0.5rem;
+}
+.botao{
+    border: none;
+}
+.pai{
+    position: relative;
+}
+.centralizar{
+    border: 1px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
