@@ -54,6 +54,8 @@ btn_onoff.addEventListener('click',() =>{
 const ipt_senha = document.querySelector('#senha')
 const btn_olho = document.querySelector('#btn-olho')
 const icn_olho = document.querySelector('#icon-olho')
+const conf_senha = document.querySelector('#confirma')
+const erro = document.querySelector('.errado')
 let visivel = false
 
 btn_olho.addEventListener('click', () =>{
@@ -68,3 +70,38 @@ btn_olho.addEventListener('click', () =>{
         visivel = true
     }
 })
+
+conf_senha.addEventListener('input',() =>{
+    if(ipt_senha.value != conf_senha.value){
+    erro.textContent ='Suas senhas não estão iguais'
+    erro.style.color = 'red'
+
+    }
+    else{
+        conf_senha.style.color = 'green'
+        erro.textContent =''
+
+    }
+})
+
+const btn_olho2 = document.querySelector('#btn-olho2')
+const icn_olho2 = document.querySelector('#icon-olho2')
+let visivel2 = false
+
+btn_olho2.addEventListener('click', () =>{
+    if (visivel2){
+        conf_senha.type= 'password'
+        icn_olho2.innerHTML = 'visibility_off'
+        visivel2 = false
+    }
+    else {
+        conf_senha.type = 'text'
+        icn_olho2.innerHTML = 'visibility'
+        visivel2 = true
+    }
+})
+
+
+
+//
+
